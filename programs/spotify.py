@@ -4,11 +4,9 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from handle_output import saveStringsToFile, extractSongsFromFile
 import os
+from load_env import Load_Env_Vars
 
-CLIENT_ID="bb5e7e9251fb4092876808a762483f51"
-CLIENT_SECRET="8d87461372224634bd2b82b2fa0381b0"
-
-REDIRECT_URI="https://localhost:443/callback"
+CLIENT_ID, CLIENT_SECRET, REDIRECT_URI = Load_Env_Vars()
 
 def authenticate_spotify():
     scope = "user-library-modify user-library-read playlist-modify-private playlist-modify-public"
